@@ -1,0 +1,26 @@
+.form-container{
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 23%;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+    border:1px solid rgb(176, 176, 176);
+    margin-bottom: 5%;
+    box-sizing: border-box;
+}
+.form-container img{
+    scale: 1.2;
+    width: 200px;
+    max-width: 50%;
+    max-height: 40%;
+}
+h1{
+    margin-bottom: 10%;
+}
+.error{
+    font-family: 'Urbanist';
+    color: var(--coral);
+}
