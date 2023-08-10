@@ -4,7 +4,10 @@ import playstore from "../../assets/playstore.png"
 import micosoft from "../../assets/microsoft.png" 
 import Partition from "../Partition";
 import Button from "../Button";
+import {useNavigate} from 'react-router-dom'; 
 const RegisterForm = () => {
+  const navigater = useNavigate()
+  const login = () => navigater('/login')
     return (
         <>
           <div className="signup-form-container">
@@ -35,8 +38,15 @@ const RegisterForm = () => {
             <Button name={"Signup"}/>
           </div>
           <div className="existing-container">
-            <p>Have an account? <span>Login</span></p>
+            <p>Have an account? <span onClick={login}>Login</span></p>
           </div>
+          <div className="get">
+            <span>Get the app</span>
+            <div className="stores">
+             <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D985327B7-64EA-431A-BB2D-0AF9C99DE09E%26utm_campaign%3DsignupPage%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge"><img src={playstore} alt="playstore" className="play"/></a>
+             <a href=""><img src={micosoft} alt="microsoft Store" className="micro" /></a>
+            </div>
+          </div> 
        </>
     );
 }

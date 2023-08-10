@@ -4,7 +4,10 @@ import playstore from "../../assets/playstore.png"
 import micosoft from "../../assets/microsoft.png" 
 import Partition from "../Partition";
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
+  const navigater = useNavigate()
+  const register = ()=> navigater('/register')
     return (
         <>
           <div className="login-form-container">
@@ -21,7 +24,7 @@ const LoginForm = () => {
             <p className="forgot">Fogot Password?</p>
           </div>
           <div className="existing-container">
-            <p>Don't have an account? <span>Sign Up</span></p>
+            <p>Don't have an account? <span onClick={register}>Sign Up</span></p>
           </div>
           <div className="get">
             <span>Get the app</span>
