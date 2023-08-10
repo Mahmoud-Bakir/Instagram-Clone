@@ -1,12 +1,11 @@
 import Post from "../../Components/Post";
 import SideMenu from "../../Components/SideMenu";
-const HomePage = () => {
+const ProfilePage = () => {
     return (
         <>
            <SideMenu/>
-           <Post/>
 
        </>
     );
 }
-export default HomePage;
+export default ProfilePage;

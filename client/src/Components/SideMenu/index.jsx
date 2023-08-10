@@ -4,16 +4,22 @@ import home from "../../assets/home.svg"
 import search from "../../assets/search.svg" 
 import profile from "../../assets/profile.svg" 
 import create from "../../assets/create.svg" 
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 const SideMenu = () =>{
+  const navigater = useNavigate()
+  const moveToProfile = () => navigater('/profile')
+  const moveToHome = () => navigater('/home')
+
     
 
     return(
         <>
         <div className="side-menu">
             <img src={logo} alt="" className="logo" />
-            <div className="side-menu-subtitle">
+            <div className="side-menu-subtitle" onClick={moveToHome}>
                 <img src={home} alt="home" />
                 <span>Home</span>
             </div>
@@ -25,8 +31,8 @@ const SideMenu = () =>{
                 <img src={create} alt="create" />
                 <span>Create</span>
             </div>
-            <div className="side-menu-subtitle">
-                <img src={profile} alt="profile" />
+            <div className="side-menu-subtitle"  onClick={moveToProfile}>
+                <img src={profile} alt="profile"/>
                 <span>Profile</span>
             </div>
             

@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const LoginForm = () => {
   const navigater = useNavigate()
-  const register = () => navigater('/register')
+  const moveToRegisteration = () => navigater('/register')
 
   const defaultState = {
     email:"",
@@ -41,7 +41,7 @@ const LoginForm = () => {
             <p className="forgot">Fogot Password?</p>
           </div>
           <div className="existing-container">
-            <p>Don't have an account? <span onClick={register}>Sign Up</span></p>
+            <p>Don't have an account? <span onClick={moveToRegisteration}>Sign Up</span></p>
           </div>
           <div className="get">
             <span>Get the app</span>
