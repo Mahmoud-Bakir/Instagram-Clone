@@ -5,9 +5,23 @@ import micosoft from "../../assets/microsoft.png"
 import Partition from "../Partition";
 import Button from "../Button";
 import {useNavigate} from 'react-router-dom'; 
+import { useState } from "react";
 const RegisterForm = () => {
   const navigater = useNavigate()
   const login = () => navigater('/login')
+
+  const defaultState = {
+    email:"",
+    name:"",
+    user_name:"",
+    password:""
+  }
+  const [data,setData] = useState(defaultState)
+
+  const handleDataChange = (e) =>{
+    setData({...data,[e.target.name]:e.target.value})
+    console.log(data)
+  }
     return (
         <>
           <div className="signup-form-container">
@@ -18,16 +32,16 @@ const RegisterForm = () => {
             <Button name={"Log in with Facebook"}/>
             <p>OR</p>
             <div className="part">
-            <Partition Itype={"email"} holder={"Email"}/>
+            <Partition Itype={"email"} Name={"email"} holder={"Email"} onChange={handleDataChange}/>
             </div>
             <div className="part">
-            <Partition Itype={"text"} holder={"Full Name"}/>
+            <Partition Itype={"text"} Name={"name"} holder={"Full Name"} onChange={handleDataChange}/>
             </div>
             <div className="part">
-            <Partition Itype={"text"} holder={"Username"}/>
+            <Partition Itype={"text"} Name={"user_name"} holder={"Username"} onChange={handleDataChange}/>
             </div>
             <div className="part">
-            <Partition Itype={"password"} holder={"Password"}/>
+            <Partition Itype={"password"} Name={"password"} holder={"Password"} onChange={handleDataChange}/>
             </div>
             <p className="subtitle">
             People who use our service may have uploaded your contact information to Instagram. Learn More

@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const LoginForm = () => {
   const navigater = useNavigate()
-  const register = ()=> navigater('/register')
+  const register = () => navigater('/register')
 
   const defaultState = {
     email:"",
@@ -22,7 +22,7 @@ const LoginForm = () => {
     setData({...data,[e.target.name]:e.target.value})
     console.log(data)
   }
-  const handleSave = async ()=>{
+  const handleLogin = async ()=>{
 
   }
     return (
@@ -35,7 +35,7 @@ const LoginForm = () => {
             <div className="part">
             <Partition Name={"password"} Itype={"password"} holder={"Password"} value={data.password} onChange={handleDataChange}/>
             </div>
-            <Button name={"Log in"} onSubmit={handleSave}/>
+            <Button name={"Log in"} onSubmit={handleLogin}/>
             <p>OR</p>
             <a href="https://m.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26locale%3Den_US%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26response_type%3Dcode%252Cgranted_scopes%26scope%3Demail%26state%3D%257B%2522fbLoginKey%2522%253A%25221dbhpb01ddvxqddh8wp1fswmd711cf1w6634yyj1mj83xg16hy4ya%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D86236009-e30a-472d-83aa-b85190ee718b%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25221dbhpb01ddvxqddh8wp1fswmd711cf1w6634yyj1mj83xg16hy4ya%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=touch&locale=en_GB&pl_dbl=0&refsrc=deprecated&_rdr">Log in with Facebook</a>
             <p className="forgot">Fogot Password?</p>
