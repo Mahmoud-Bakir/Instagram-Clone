@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import  './style.css';
 
-const Partition=({Itype,onChange,holder},)=>{  
+const Partition=({Name,Itype,onChange,holder},)=>{  
     return(
     <div className="part">
-        <input type={Itype} onChange={onChange} placeholder={holder} required/>
+        <input name={Name} type={Itype} onChange={onChange} placeholder={holder} required/>
     </div>
     );
 }
