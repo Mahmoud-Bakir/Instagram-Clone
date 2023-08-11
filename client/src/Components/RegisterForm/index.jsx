@@ -6,6 +6,7 @@ import Partition from "../Partition";
 import Button from "../Button";
 import {useNavigate} from 'react-router-dom'; 
 import { useState } from "react";
+import axios from "axios";
 const RegisterForm = () => {
   const navigater = useNavigate()
   const login = () => navigater('/login')
@@ -22,6 +23,16 @@ const RegisterForm = () => {
     setData({...data,[e.target.name]:e.target.value})
     console.log(data)
   }
+  const handleSignup = async ()=>{
+    axios.post("http://localhost:8000/api/guest/register",data)
+.then((response)=>{
+  localStorage.setItem("token",response.data.user.token)
+  window.location.href="http://localhost:3000/home"
+}
+    
+   
+    
+)}
     return (
         <>
           <div className="signup-form-container">
@@ -49,7 +60,7 @@ const RegisterForm = () => {
             <p className="subtitle">
             By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .
             </p>
-            <Button name={"Signup"}/>
+            <Button name={"Signup"} onSubmit={handleSignup}/>
           </div>
           <div className="existing-container">
             <p>Have an account? <span onClick={login}>Login</span></p>

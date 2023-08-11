@@ -27,8 +27,9 @@ const LoginForm = () => {
   }
   const handleLogin = async ()=>{
     const response = await axios.post("http://localhost:8000/api/guest/login",data)
+    window.localStorage.setItem("token",response.data.user.token)
     window.location.href="http://localhost:3000/home"
-    console.log(response)
+    console.log(response.data.user.token)
   }
     return (
         <>
