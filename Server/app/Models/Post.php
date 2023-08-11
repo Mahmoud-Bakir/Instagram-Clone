@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Post extends Model
 {
+    
     use HasFactory;
     protected $fillable = [
-        'name',
         'image_url',
         'likes',
         'user_id',
     ];
+    public $timestamps = false;
 
     public function user()
     {

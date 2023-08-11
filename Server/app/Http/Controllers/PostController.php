@@ -4,31 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Contact;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
 
-class ContactController extends Controller
+class PostController extends Controller
 {
-    public function addContact(Request $request){
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'number' => 'required|string',
-        ]);
-        $user = Auth::user();
-        $id = $user->id;
-        $contact= new Contact;
-        $contact->name = $request->name;
-        $contact->number= $request->number;
-        $contact->altitude = $request->altitude;
-        $contact->longitude = $request->longitude;
-        $contact->user_id = $id;
-        $contact->save();
+    public function addPost(Request $request){
+        $id=Auth::id();
+        $post= new Post;
+        $post->image_url = $request->image_url;
+        $post->user_id = $id;
+        $post->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'contact created successfully',
-            'user' => $contact,
+            'message' => 'post created successfully',
+            'post' => $post,
         ]);   
     }
 
