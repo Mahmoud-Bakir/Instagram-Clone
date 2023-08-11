@@ -4,13 +4,16 @@ import playstore from "../../assets/playstore.png"
 import micosoft from "../../assets/microsoft.png" 
 import Partition from "../Partition";
 import Button from "../Button";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Modal from 'react-modal';
+import axios from 'axios';
 
 
 const LoginForm = () => {
   const navigater = useNavigate()
   const moveToRegisteration = () => navigater('/register')
+  const moveToHome = () => navigater('/home')
 
   const defaultState = {
     email:"",
@@ -23,12 +26,17 @@ const LoginForm = () => {
     console.log(data)
   }
   const handleLogin = async ()=>{
-
+    const response = await axios.post("http://localhost:8000/api/guest/login",data)
+    window.location.href="http://localhost:3000/home"
+    console.log(response)
   }
     return (
         <>
           <div className="login-form-container">
-            <img src={logo} alt="Instagram" />
+            <div className="logo-container">
+            <img src={logo} alt="Instagram"/>
+            </div>
+            
             <div className="part">
             <Partition Name={"email"} Itype={"email"} holder={"Phone number, username, or email"} value={data.email} onChange={handleDataChange}/>
             </div>
