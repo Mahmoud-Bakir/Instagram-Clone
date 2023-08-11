@@ -1,7 +1,7 @@
 import './style.css';
 const Button = ({name,onSubmit}) => {
     return (
-        <button onClick={onSubmit}>
+        <button className='button-register' onClick={onSubmit}>
             {name}
         </button>
     );

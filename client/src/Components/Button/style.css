@@ -1,4 +1,4 @@
-button{
+.button-register{
     margin-top: 2%;
     background-color:#1aa3ff;
     outline:none;
@@ -11,6 +11,6 @@ button{
     font-size: large;
     font-weight: 600;
 }
-button:hover{
+.button-register:hover{
     background-color: #4098d2;
 }
